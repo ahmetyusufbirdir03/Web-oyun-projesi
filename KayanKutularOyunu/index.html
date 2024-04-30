@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayan Kutular</title>
+    <style>
+
+        body{
+            margin: 0; 
+            background-color: black;
+            display: grid;
+            align-items: center;
+            justify-content: center; 
+            background-image: url('sky.jpg');
+        }
+        .pop-up-container{
+            width: 300px;
+            height: 400px;
+            display: block;
+            position: fixed;
+            top: 10%;
+            background-color: #FFEDD8;
+            bottom: 40%;
+            left: 40%;
+            right: 40%;
+            z-index: 9;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            border: 2px solid #240A34;
+
+        }
+        .pop-up{
+            width: 280px;
+            height: 380px;
+            margin: 10px 10px 10px 10px;
+            display: grid;
+            position: absolute;
+            background-color: #240A34;
+            border-radius: 13px;
+            align-items: center;
+            justify-items: center;
+        }
+        .pop-up-container .btn{
+            background-color: #891652;
+            color: #FFEDD8;
+            padding: 16px 20px;
+            border: 2px solid #FFEDD8;
+            cursor: pointer;
+            width: 80%;
+            height: 70%;
+            font-size: larger;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        p{
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body >
+    <div class="pop-up-container" id="popup">
+        <div class="pop-up" id="giris">   
+            <h1 style="font-family: Arial, Helvetica, sans-serif; 
+            font-weight: bolder; color: #FFEDD8; 
+            margin: 0">Kayan Kutular</h1>
+            <button class="btn" onclick="buttonOyna()">OYNA</button>
+            <button class="btn" onclick="buttonOynanış()">OYNANIŞ</button>
+        </div>
+        <div class="pop-up" style="display: none;" id="kurallar">
+            <p style="background-color: #240A34 ;color: #FFEDD8; height: 240px; margin: 0;padding: 10px;">
+                Oyun konrolleri W,A,D tuşları iledir. W zıplama, A sola gitme,
+                D sağa gitme işlevini görmektedir.<br><br>
+                Oyunun amacı size doğru gelen platformlardan kaçmak ve onları atlatmaktır.
+                Platformlar sizi oyun alanının dışına iterse kaybersiniz.
+                Başarılar...
+            </p>
+            <button style="background-color: #891652; color: #FFEDD8;
+            padding: 13px 20px;border: 2px solid #FFEDD8; cursor: pointer;
+            width: 100px;height: 50px;font-size: larger; border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;margin: 40px 90px 30px 90px;
+            font-weight: bolder;" onclick="buttonGeri()">Geri</button>
+        </div>   
+    </div>
+    
+    <p id="skor" style="background-color: white; margin: 0; display: flex; "></p>
+    <canvas id="mycanvas"> </canvas>
+    <canvas id="ground"></canvas>
+   
+    <div class="pop-up-container" id="popup2" style="display: none;">
+        <div class="pop-up" id="giris">   
+            <h1 style="font-family: Arial, Helvetica, sans-serif; 
+            font-weight: bolder; color: #FFEDD8; 
+            margin: 0">Kayan Kutular</h1>
+            <button class="btn" id="sonSkor">Oynadığınız için teşekkürler</button>
+            <button class="btn" onclick="buttonOyna()">OYUN BİTTİ</button>
+            
+        </div>  
+    </div>
+    <script src="kodlar.js"></script>
+</body>
+</html>
